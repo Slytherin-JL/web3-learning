@@ -1,0 +1,102 @@
+Basic concepts of Ethereum.
+Ethereum is a decentralized application platform, smart contracts are applied in it, normally, we call it as web3 application or DApp.
+
+Difference between web2 application and web3.
+
+Web2, traditional  web application:
+Users will launch their tasks and transcation in application frontend via HTTP/REST API, and these tasks will be transformed into Server(controlled by companies and firms), then , Server will split these information into database and file storage.
+Web3, Users will launche their transaction in Wallet, and then these tasks will be transformed into DApp, and in there, they will be split into two parts and be transformed into Decentralized storage storage and smart contract via RPC request.
+
+Four major features of WEB3 application：
+1.Frontend users will manage their data by wallet.
+2.Backend core logic will be operated on blockchain via smart contract.
+3.No centralized Server controll everything.
+4.Transaction will be finished untill recognized by whole web.
+
+Smart contract, is the programme run on Ethereum. Just the same as other programme on computers, composed by code and data.
+
+Let's have a simple smart contract example:
+
+//SPDX-License-Identifier:MIT
+pragma solidity^0.8.0;
+
+contract ArithmeticExample {
+
+function arithmecti(uint a ,uint b) public pure returns(uint, uint, uint, uint, uint){
+return(
+a+b;
+a-b;
+a*b;
+a/b;
+a%b;)
+  }
+}
+In this contract, Arithmetic is condition variable, arithmetc is function, and return is to get the results of this arithmetic function.
+
+
+When we comply this contract, will generate an address belongs to this contract,and this comes another point we have to absorb, EOA(Exteranal Owned Account and Contract Account).
+
+EOA -External Owned Account
+1.Controlled by user's key.
+2.Can launching a transaction.
+3.Need to pay Gas fee.
+4.For example, user's MetaMask address.
+
+CA-Contract Account
+1.Controlled by contract.
+2.Can only be called but not active.
+3.Can not launch a trasaction.
+4.The Arithmetic contract.
+
+These two contract have both same feature；
+Address formats are the same:0xea674fdde714fd979de3edf0f56aa9716b898ec8 , a hexadecimal with 20 bytes.
+
+Major three difference between these two contracts:
+1.EOA can launch a transaction.
+2.Gas fee has to be paid by EOA.
+3.CA can only be called but never active.
+
+Ethereum and Gas.
+
+ETH:
+
+1 ETH = 1,000,000,000 Gwei                       ETH is the common uint in Ethereum.
+1 Gwei = 1,000,000,000 wei=1*10^9 wei            Gwei is the common price uint.
+1 ETH = 1,000,000,000,000,000,000 wei = 1*10^18 wei       Wei is the samllest uint, frequently used in development.
+
+Gas:
+
+Gas is some sort of labour cost in smart contract. To prevent malicious programs from running continuously and wasting computing power, a Gas mechanism is employed.
+
+·Everry action is smart contract will cost Gas.
+·Price of Gas will decide the priority of being handled with.
+·Final fee =  Gas used * price.
+
+The way of costing Gas:
+1.Basic transaction, about 2,1000 Gas.
+2.Comply smart contract, 100K-Millians of Gas.
+3.Calling contract functions: The cost depends on complexity; for example, writing data to the blockchain is more expensive than ordinary computation.
+4.Read-only operations (such as calling `get()`) do not consume gas.
+
+Gas fee: How many Gas would you like to pay for per unit of Gas.
+1.When jam, the Gas fee will be higher.
+2.The Gas quoted higher, the calculaition speed will be higher.
+
+Gas limit: How many Gas would you like to pay for this transaction, to prevent wasting accidentally.
+1.Too less may cause transation failed.
+2.The rest will be reverted if it is too much.
+
+We have to remind ourselves that transaction is the only way to interacte in Ethereum.
+1.Transaction.
+2.Comply smart contract.
+3.Call a contract function.
+
+
+
+
+
+
+
+
+
+
